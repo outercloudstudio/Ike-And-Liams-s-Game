@@ -1,0 +1,2 @@
+def HOI ():
+    print("Hoi")

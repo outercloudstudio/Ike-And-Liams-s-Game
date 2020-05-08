@@ -1,5 +1,1 @@
-
 import random
-
-Hey Ike
-

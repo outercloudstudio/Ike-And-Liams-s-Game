@@ -25,7 +25,6 @@ def GenerateWorld (size):
     for x in range (0,size-2) :
         for y in range (0,size-2) :
             World[(x,y)] = "a"
-            print("WP: "+WorldPlaces[1])
             #WorldPlaces[RandRange(0,WorldPlaces.size)]
             x+=1
         y+=1
@@ -35,8 +34,5 @@ GenerateWorld(5)
 def PrintNPArray(array):
     for item in array:
         print(item)
-PrintNPArray(World)
-print(World[0,0])
-print("done")
 
     

@@ -1,3 +1,3 @@
-import Module as m
+import src
 print("Ike's Work")
-m.HOI()
+src.HOI()

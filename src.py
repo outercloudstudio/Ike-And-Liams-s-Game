@@ -2,17 +2,13 @@ import numpy as np
 from random import seed
 from random import random
 import math
-#             0   1   2   3   4   5   6   7   8   9  10
-ASCCI = np.array([" ",".","-","~","o","O","G","%","&","@","|"])
-WorldPlaces = np.array(["Forest","Dessert","Mountains","Ocean","Swamp","Plains"])
-World = np.full((5,5),"")
+planetNames = ["Croid","Hyrusk","Atlasks","Liompa","Geh","Retd","Kring"]
+planetNames2= ["223","w220","sdhu","sdh2o","1e9dj","2d89","1hdk","dsfkh","sndi"]
+planetNamesCreated = []
 #seed to prevent any errors that might happen
 #if seed is the same them random numbers will be the same
 #maybe use something to pick a seed maybe based on time?
 seed(0)
-#test function
-def HOI ():
-    print("Hoi")
 #to set the seed
 def SetSeed(s):
     seed(s)
@@ -20,19 +16,20 @@ def SetSeed(s):
 def RandRange(min,max):
     return (math.floor(random()*(max-min)+min))
 
-def GenerateWorld (size):
-    World =  np.full((size,size), "",dtype=str)
-    for x in range (0,size-2) :
-        for y in range (0,size-2) :
-            World[(x,y)] = "a"
-            #WorldPlaces[RandRange(0,WorldPlaces.size)]
-            x+=1
-        y+=1
+def GeneratePlanet() :
+    name = ""
+    name += planetNames[RandRange(0,len(planetNames)-1)]
+    name+="_"
+    name += planetNames2[RandRange(0,len(planetNames2)-1)]
+    for i in planetNamesCreated:
+        if name == i:
+            name = "Planet_"
+            name += str(RandRange(100000,999999))
+    for t in planetNamesCreated:
+        if name ==t:
+            GeneratePlanet()
+    planetNamesCreated.append(name)
+    return name
 
-GenerateWorld(5)
-
-def PrintNPArray(array):
-    for item in array:
-        print(item)
 
     

@@ -1,8 +1,11 @@
-from src import *
+import src
+
+PlanetDestination = src.GeneratePlanet
 
 def cockpit(name):
     print("You open the door and go out. It seems that you have walked into a tangle of arms. legs, and voices.")
     input()
+    print("You over hear someone one say we are going to the planet " + PlanetDestination)
 
 
 def room1(name):

@@ -51,12 +51,3 @@ def GenerateRaceName():
             GenerateRaceName()
     RacesCreated.append(name)
     return name
-
-<<<<<<< HEAD
-def PrintNPArray(array):
-    for item in array:
-        print(item)
-=======
-
-    
->>>>>>> 3ca39c61ee2e192f9a43be2d4c37f0bce3e8e74e

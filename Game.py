@@ -1,6 +1,6 @@
 import src
 
-PlanetDestination = src.GeneratePlanet
+PlanetDestination = src.GeneratePlanet()
 
 def goodbye(name):
     print(f"Goodbye, {name}")
@@ -8,8 +8,8 @@ def goodbye(name):
 def cockpit(name):
     print("You open the door and go out. It seems that you have walked into a tangle of arms. legs, and voices.")
     input()
-    print("You over hear someone one say we are going to the planet " + PlanetDestination)
-
+    print(f"You overhear someone one say we are going to the planet {PlanetDestination}")
+    input()
 
 def room1(name):
     print("You wake up to the sound of screaming in a dark room.")
@@ -19,13 +19,13 @@ def room1(name):
     door = input("You do not know how you got here, nor do you know where you are. But one thing that you do know is that there is a door in front of you. Do you open it and go out? (y or n)")
     if door.lower() == "h":
         preparation(name)
-    elif door.lower == "q":
+    elif door.lower() == "q":
         goodbye(name)
-    elif door.lower == "n":
+    elif door.lower() == "n":
         print("You go back to sleep.")
         input()
         room1(name)
-    elif door.lower == "y":
+    elif door.lower() == "y":
         cockpit(name)
     else:
         print(f"Please write one of the given answers, {name}.")

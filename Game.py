@@ -1,4 +1,6 @@
-from src import *
+import src
+
+PlanetDestination = src.GeneratePlanet
 
 def goodbye(name):
     print(f"Goodbye, {name}")
@@ -6,6 +8,7 @@ def goodbye(name):
 def cockpit(name):
     print("You open the door and go out. It seems that you have walked into a tangle of arms. legs, and voices.")
     input()
+    print("You over hear someone one say we are going to the planet " + PlanetDestination)
 
 
 def room1(name):
@@ -35,7 +38,7 @@ def preparation(name):
         goodbye(name)
     elif prep.lower() == "h":
         preparation(name)
-    elif prep.lower() == "continue"
+    elif prep.lower() == "continue" :
         room1(name)
     else:
         print("Please write one of the given answers.")

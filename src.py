@@ -2,17 +2,18 @@ import numpy as np
 from random import seed
 from random import random
 import math
-#             0   1   2   3   4   5   6   7   8   9  10
-ASCCI = np.array([" ",".","-","~","o","O","G","%","&","@","|"])
-WorldPlaces = np.array(["Forest","Dessert","Mountains","Ocean","Swamp","Plains"])
-World = np.full((5,5),"")
+planetNames = ["Croid","Hyrusk","Atlasks","Liompa","Geh","Retd","Kring"]
+planetNames2= ["223","w220","sdhu","sdh2o","1e9dj","2d89","1hdk","dsfkh","sndi"]
+planetNamesCreated = []
+RaceName1 = ["R","T","Ch","W","C","Z","L"]
+RaceName2=["a","o","i","e","o"]
+RaceName3 =["ch","ts","ls","ps","sh","x","d","kr"]
+RaceName4 = ["","ex","s","y"]
+RacesCreated = []
 #seed to prevent any errors that might happen
 #if seed is the same them random numbers will be the same
 #maybe use something to pick a seed maybe based on time?
 seed(0)
-#test function
-def HOI ():
-    print("Hoi")
 #to set the seed
 def SetSeed(s):
     seed(s)
@@ -20,17 +21,42 @@ def SetSeed(s):
 def RandRange(min,max):
     return (math.floor(random()*(max-min)+min))
 
-def GenerateWorld (size):
-    World =  np.full((size,size), "",dtype=str)
-    for x in range (0,size-2) :
-        for y in range (0,size-2) :
-            World[(x,y)] = "a"
-            #WorldPlaces[RandRange(0,WorldPlaces.size)]
-            x+=1
-        y+=1
+def GeneratePlanet() :
+    name = ""
+    name += planetNames[RandRange(0,len(planetNames)-1)]
+    name+="_"
+    name += planetNames2[RandRange(0,len(planetNames2)-1)]
+    for i in planetNamesCreated:
+        if name == i:
+            name = "Planet_"
+            name += str(RandRange(100000,999999))
+    for t in planetNamesCreated:
+        if name ==t:
+            GeneratePlanet()
+    planetNamesCreated.append(name)
+    return name
 
-GenerateWorld(5)
+def GenerateRaceName():
+    name = ""
+    name +=RaceName1[RandRange(0,len(RaceName1)-1)]
+    name +=RaceName2[RandRange(0,len(RaceName2)-1)]
+    name +=RaceName3[RandRange(0,len(RaceName3)-1)]
+    name +=RaceName4[RandRange(0,len(RaceName4)-1)]
+    for i in RacesCreated:
+        if name == i:
+            name = "Race "
+            name += str(RandRange(100000,999999))
+    for t in RacesCreated:
+        if name ==t:
+            GenerateRaceName()
+    RacesCreated.append(name)
+    return name
 
+<<<<<<< HEAD
 def PrintNPArray(array):
     for item in array:
         print(item)
+=======
+
+    
+>>>>>>> 3ca39c61ee2e192f9a43be2d4c37f0bce3e8e74e

@@ -34,5 +34,3 @@ GenerateWorld(5)
 def PrintNPArray(array):
     for item in array:
         print(item)
-
-    

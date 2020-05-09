@@ -28,7 +28,7 @@ def preparation(name):
         print("Goodbye")
     elif prep.lower() == "h":
         preparation(name)
-    elif prep.lower() == "continue"
+    elif prep.lower() == "continue" :
         room1(name)
     else:
         print("Please write one of the given answers.")

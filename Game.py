@@ -10,6 +10,10 @@ def planetright():
     print(f"After you tell her that you would like to go to planet {PlanetDestRight}, she says, 'Are you sure? {PlanetDestRightQualities}'")
     planetDecision = input()
 
+def planetleft():
+    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {PlanetDestLeftQualities}'")
+    planetDecision = input()
+
 def goodbye(name):
     print(f"Goodbye, {name.title()}")
 

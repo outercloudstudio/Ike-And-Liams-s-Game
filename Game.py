@@ -5,7 +5,7 @@ PlanetDestRight = src.GeneratePlanet()
 PlanetDestLeft = src.GeneratePlanet()
 
 def planetright():
-    
+
 
 def planetleft():
 
@@ -60,3 +60,4 @@ def preparation(name):
 
 name = input("What is your name?\t")
 preparation(name)
+print(name)

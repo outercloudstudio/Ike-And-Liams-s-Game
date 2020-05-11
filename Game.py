@@ -4,6 +4,12 @@ PlanetDestination = src.GeneratePlanet()
 PlanetDestRight = src.GeneratePlanet()
 PlanetDestLeft = src.GeneratePlanet()
 
+def planetright():
+    
+
+def planetleft():
+
+
 def goodbye(name):
     print(f"Goodbye, {name}")
 
@@ -12,7 +18,11 @@ def cockpit(name):
     input()
     print(f"You overhear someone one say we are going to the planet {PlanetDestination}")
     input()
-    crewmember = input(f"A woman runs up to you and salues. 'Captain! There has been an error in our piloting system! We have flown into a meteor shower! It is impossible to go forward, so we will not be going to the planet {PlanetDestination}! Left is the planet {PlanetDestLeft}, and right is the planet {PlanetDestRight} It's your call, sir!' Will you go left, or right? (l or r)\t")
+    crewmember = input(f"A woman runs up to you and salues. 'Captain! {name} There has been an error in our piloting system! We have flown into a meteor shower! It is impossible to go forward, so we will not be going to the planet {PlanetDestination}! Left is the planet {PlanetDestLeft}, and right is the planet {PlanetDestRight} It's your call, sir!' Will you go left, or right? (l or r)\t")
+    if crewmember == "left":
+        planetleft()
+    if crewmember == "right":
+        planetright()    
 
 def room1(name):
     print("You wake up to the sound of screaming in a dark room.")

@@ -14,12 +14,14 @@ RacesCreated = []
 #if seed is the same them random numbers will be the same
 #maybe use something to pick a seed maybe based on time?
 seed(0)
+seedmy =0
 #to set the seed
 def SetSeed(s):
     seed(s)
 #get a random int within a range
 def RandRange(min,max):
-    return (math.floor(random()*(max-min)+min))
+    ran =math.floor(random()*(max-min)+min)
+    return (ran)
 
 def GeneratePlanet() :
     name = ""

@@ -51,3 +51,16 @@ def GenerateRaceName():
             GenerateRaceName()
     RacesCreated.append(name)
     return name
+
+def GeneratePlanetQualities():
+    Quality1 = ["Rocky","Hilly","Flat"]
+    Quality2 =["Hot", "Temperate","Cold","Warm","Freezing"]
+    Quality3 = ["Jungle","Dessert","Ocean","Mountain","Forest","Snow"]
+    return [Quality1[RandRange(0,len(Quality1)-1)],Quality2[RandRange(0,len(Quality2)-1)],Quality3[RandRange(0,len(Quality3)-1)]]
+
+def DescribePlanet():
+    q = GeneratePlanetQualities()
+    n = GeneratePlanet()
+    d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."
+    return d
+

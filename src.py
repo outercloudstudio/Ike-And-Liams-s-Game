@@ -53,9 +53,9 @@ def GenerateRaceName():
     return name
 
 def GeneratePlanetQualities():
-    Quality1 = ["Rocky","Hilly","Flat"]
-    Quality2 =["Hot", "Temperate","Cold","Warm","Freezing"]
-    Quality3 = ["Jungle","Dessert","Ocean","Mountain","Forest","Snow"]
+    Quality1 = ["rocky","hilly","flat"]
+    Quality2 =["hot", "temperate","cold","warm","freezing"]
+    Quality3 = ["jungle","dessert","ocean","mountain","forest","snow"]
     return [Quality1[RandRange(0,len(Quality1)-1)],Quality2[RandRange(0,len(Quality2)-1)],Quality3[RandRange(0,len(Quality3)-1)]]
 
 def DescribePlanet():

@@ -1,3 +1,6 @@
+file = src.cpython-38
+with open(filename, encode=pyc):
+    file.read()
 import src
 
 PlanetDestination = src.GeneratePlanet()
@@ -8,7 +11,11 @@ PlanetDestLeftQualities = src.DescribePlanet()
 
 def planetright():
     print(f"After you tell her that you would like to go to planet {PlanetDestRight}, she says, 'Are you sure? {PlanetDestRightQualities}'")
-    planetDecision = input()
+    planetDecisionRight = input()
+
+def planetleft():
+    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {PlanetDestLeftQualities}'")
+    planetDecisionLeft = input()    
 
 def goodbye(name):
     print(f"Goodbye, {name.title()}")
@@ -18,7 +25,7 @@ def cockpit(name):
     input()
     print(f"You overhear someone one say we are going to the planet {PlanetDestination}")
     input()
-    print(f"A woman runs up to you and salues. 'Captain {name.title()} There has been an error in our piloting system! We have flown into a meteor shower! It is impossible to go forward, so we will not be going to the planet {PlanetDestination}! Left is the planet {PlanetDestLeft}, and right is the planet {PlanetDestRight} It's your call, sir!' Will you go left, or right? (l or r)\t")
+    print(f"A woman runs up to you and salues. 'Captain {name.title()}! There has been an error in our piloting system! We have flown into a meteor shower! It is impossible to go forward, so we will not be going to the planet {PlanetDestination}! Left is the planet {PlanetDestLeft}, and right is the planet {PlanetDestRight} It's your call, sir!' Will you go left, or right? (l or r)\t")
     crewmember = input()    
     if crewmember == "l":
         planetleft()

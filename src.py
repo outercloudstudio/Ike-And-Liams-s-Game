@@ -10,6 +10,8 @@ RaceName2=["a","o","i","e","o"]
 RaceName3 =["ch","ts","ls","ps","sh","x","d","kr"]
 RaceName4 = ["","ex","s","y"]
 RacesCreated = []
+
+LastDescribePlanet = []
 #seed to prevent any errors that might happen
 #if seed is the same them random numbers will be the same
 #maybe use something to pick a seed maybe based on time?
@@ -55,14 +57,18 @@ def GenerateRaceName():
     return name
 
 def GeneratePlanetQualities():
-    Quality1 = ["rocky","hilly","flat"]
-    Quality2 =["hot", "temperate","cold","warm","freezing"]
-    Quality3 = ["jungle","dessert","ocean","mountain","forest","snow"]
+    Quality1 = ["rocky","hilly","flat","has plateus","has cliffs"]
+    Quality2 =["hot", "temperate","cold","warm","freezing","boiling"]
+    Quality3 = ["jungle","dessert","ocean","mountain","forest","snow","ice","paradise","volcano"]
     return [Quality1[RandRange(0,len(Quality1)-1)],Quality2[RandRange(0,len(Quality2)-1)],Quality3[RandRange(0,len(Quality3)-1)]]
 
 
 
 def DescribePlanet():
+    LastDescribePlanet = []
+    LastDescribePlanet.append(GeneratePlanetQualities[0])
+    LastDescribePlanet.append(GeneratePlanetQualities[1])
+    LastDescribePlanet.append(GeneratePlanetQualities[2])
     q = GeneratePlanetQualities()
     n = GeneratePlanet()
     d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."

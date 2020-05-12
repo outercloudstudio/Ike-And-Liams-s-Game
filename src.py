@@ -60,6 +60,8 @@ def GeneratePlanetQualities():
     Quality3 = ["jungle","dessert","ocean","mountain","forest","snow"]
     return [Quality1[RandRange(0,len(Quality1)-1)],Quality2[RandRange(0,len(Quality2)-1)],Quality3[RandRange(0,len(Quality3)-1)]]
 
+
+
 def DescribePlanet():
     q = GeneratePlanetQualities()
     n = GeneratePlanet()

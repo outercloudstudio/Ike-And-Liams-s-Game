@@ -62,15 +62,6 @@ def GeneratePlanetQualities():
     Quality3 = ["jungle","dessert","ocean","mountain","forest","snow","ice","paradise","volcano"]
     return [Quality1[RandRange(0,len(Quality1)-1)],Quality2[RandRange(0,len(Quality2)-1)],Quality3[RandRange(0,len(Quality3)-1)]]
 
-
-
-def DescribePlanet():
-    q = GeneratePlanetQualities()
-    LastDescribePlanet=q
-    n = GeneratePlanet()
-    d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."
-    return d
-
 def DescribePlanet(qual = [], name = ""):
     q = []
     n=""
@@ -78,7 +69,7 @@ def DescribePlanet(qual = [], name = ""):
         q = GeneratePlanetQualities()
     else:
         q=qual
-    if name = "":
+    if name == "":
         n = GeneratePlanet()
     else:
         n = name

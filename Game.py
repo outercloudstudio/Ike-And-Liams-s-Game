@@ -1,6 +1,3 @@
-file = src.cpython-38
-with open(filename, encode=pyc):
-    file.read()
 import src
 
 
@@ -22,23 +19,17 @@ ini(name)
 
 PlanetDestination = src.GeneratePlanet()
 PlanetDestRight = src.GeneratePlanet()
-PlanetDestRightQualities = src.DescribePlanet()
+PlanetRightQualities = src.GeneratePlanetQualities()
 PlanetDestLeft = src.GeneratePlanet()
-PlanetDestLeftQualities = src.DescribePlanet()
+PlanetLeftQualities = src.GeneratePlanetQualities()
 
 def planetright():
-    print(f"After you tell her that you would like to go to planet {PlanetDestRight}, she says, 'Are you sure? {PlanetDestRightQualities}'")
+    print(f"After you tell her that you would like to go to planet {PlanetDestRight}, she says, 'Are you sure? {src.DescribePlanet(PlanetRightQualities, PlanetDestRight)}'")
     planetDecisionRight = input()
 
 def planetleft():
-    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {PlanetDestLeftQualities}'")
+    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {src.DescribePlanet(PlanetLeftQualities, PlanetDestLeft)}'")
     planetDecisionLeft = input()    
-
-
-def planetleft():
-    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {PlanetDestLeftQualities}'")
-    planetDecision = input()
-
 
 def goodbye(name):
     print(f"Goodbye, {name.title()}")
@@ -55,7 +46,7 @@ def cockpit(name):
     if crewmember == "r":
         planetright()
     if crewmember == "q":
-        goodbye()
+        goodbye(name)
 
 def room1(name):
     print("You wake up to the sound of screaming in a dark room.")

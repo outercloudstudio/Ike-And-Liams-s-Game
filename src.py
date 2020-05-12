@@ -71,3 +71,17 @@ def DescribePlanet():
     d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."
     return d
 
+def DescribePlanet(qual = [], name = ""):
+    q = []
+    n=""
+    if len(qual) == 0:
+        q = GeneratePlanetQualities()
+    else:
+        q=qual
+    if name = "":
+        n = GeneratePlanet()
+    else:
+        n = name
+    d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."
+    return d
+

@@ -65,10 +65,11 @@ def GeneratePlanetQualities():
 
 
 def DescribePlanet():
+    blank = GeneratePlanetQualities()
     LastDescribePlanet = []
-    LastDescribePlanet.append(GeneratePlanetQualities[0])
-    LastDescribePlanet.append(GeneratePlanetQualities[1])
-    LastDescribePlanet.append(GeneratePlanetQualities[2])
+    LastDescribePlanet.append(blank[0])
+    LastDescribePlanet.append(blank[1])
+    LastDescribePlanet.append(blank[2])
     q = GeneratePlanetQualities()
     n = GeneratePlanet()
     d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."

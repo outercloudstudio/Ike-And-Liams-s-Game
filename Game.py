@@ -3,6 +3,23 @@ with open(filename, encode=pyc):
     file.read()
 import src
 
+
+chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+numbers=['1','2','3','4','5','6','7','8','9','0','1','2','3','4','5','6','7','8','9','0','1','2','3','4','5','6']
+
+
+def ini (n):
+    nam = n.lower()
+    seedjoin = ""
+    for i in nam:   
+        seedjoin +=numbers[chars.index(i)]
+    src.SetSeed(int(seedjoin))
+
+print("What is your name?\t")
+name = input()
+ini(name)
+
+
 PlanetDestination = src.GeneratePlanet()
 PlanetDestRight = src.GeneratePlanet()
 PlanetDestRightQualities = src.DescribePlanet()
@@ -16,6 +33,12 @@ def planetright():
 def planetleft():
     print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {PlanetDestLeftQualities}'")
     planetDecisionLeft = input()    
+
+
+def planetleft():
+    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {PlanetDestLeftQualities}'")
+    planetDecision = input()
+
 
 def goodbye(name):
     print(f"Goodbye, {name.title()}")
@@ -66,6 +89,4 @@ def preparation(name):
         input()
         preparation(name)    
 
-print("What is your name?\t")
-name = input()
 preparation(name)

@@ -16,6 +16,7 @@ print("What is your name?\t")
 name = input()
 ini(name)
 
+
 PlanetDestination = src.GeneratePlanet()
 PlanetDestRight = src.GeneratePlanet()
 PlanetDestRightQualities = src.DescribePlanet()

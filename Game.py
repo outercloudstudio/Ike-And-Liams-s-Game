@@ -23,22 +23,37 @@ PlanetRightQualities = src.GeneratePlanetQualities()
 PlanetDestLeft = src.GeneratePlanet()
 PlanetLeftQualities = src.GeneratePlanetQualities()
 
+def gotoplanetright():
+    print("Yahoo!")
+
 def planetright():
-    print(f"After you tell her that you would like to go to planet {PlanetDestRight}, she says, 'Are you sure? {src.DescribePlanet(PlanetRightQualities, PlanetDestRight)}'")
+    print(f"After you tell her that you would like to go to planet {PlanetDestRight}, she says, 'Are you sure? {src.DescribePlanet(PlanetRightQualities, PlanetDestRight)}'(y or n)")
     planetDecisionRight = input()
+    if planetDecisionRight == "y":
+        gotoplanetright()
+    elif planetDecisionRight == "n":
+        woman()
+    elif planetDecisionRight == "q":
+        goodbye(name)
+    else:
+        planetright()
 
 def planetleft():
-    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {src.DescribePlanet(PlanetLeftQualities, PlanetDestLeft)}'")
-    planetDecisionLeft = input()    
+    print(f"After you tell her that you would like to go to planet {PlanetDestLeft}, she says, 'Are you sure? {src.DescribePlanet(PlanetLeftQualities, PlanetDestLeft)}'(y or n)")
+    planetDecisionLeft = input()
+    if planetDecisionLeft == "y":
+        gotoplanetright()
+    elif planetDecisionLeft == "n":
+        woman()
+    elif planetDecisionLeft == "q":
+        goodbye(name)
+    else:
+        planetleft()   
 
 def goodbye(name):
     print(f"Goodbye, {name.title()}")
 
-def cockpit(name):
-    print("You open the door and go out. It seems that you have walked into a tangle of arms. legs, and voices.")
-    input()
-    print(f"You overhear someone one say we are going to the planet {PlanetDestination}")
-    input()
+def woman():
     print(f"A woman runs up to you and salues. 'Captain {name.title()}! There has been an error in our piloting system! We have flown into a meteor shower! It is impossible to go forward, so we will not be going to the planet {PlanetDestination}! Left is the planet {PlanetDestLeft}, and right is the planet {PlanetDestRight} It's your call, sir!' Will you go left, or right? (l or r)\t")
     crewmember = input()    
     if crewmember == "l":
@@ -47,6 +62,13 @@ def cockpit(name):
         planetright()
     if crewmember == "q":
         goodbye(name)
+
+def cockpit(name):
+    print("You open the door and go out. It seems that you have walked into a tangle of arms. legs, and voices.")
+    input()
+    print(f"You overhear someone one say we are going to the planet {PlanetDestination}")
+    input()
+    woman()
 
 def room1(name):
     print("You wake up to the sound of screaming in a dark room.")
@@ -79,5 +101,5 @@ def preparation(name):
         print("Please write one of the given answers.")
         input()
         preparation(name)    
-
+        
 preparation(name)

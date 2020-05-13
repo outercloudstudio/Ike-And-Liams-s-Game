@@ -76,3 +76,4 @@ def DescribePlanet(qual = [], name = ""):
     d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."
     return d
 
+    

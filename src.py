@@ -63,10 +63,13 @@ def GeneratePlanetQualities():
     q1=Quality1[RandRange(0,len(Quality1)-1)]
     q2=Quality2[RandRange(0,len(Quality2)-1)]
     q3=Quality3[RandRange(0,len(Quality3)-1)]
-    while ((q1 = "rocky" and q3 = "mountain") or (q2 = "hot" and q3 = "snow")or (q2 = "hot" and q3 = "ice")or (q2 = "warm" and q3 = "snow")or (q2 = "warm" and q3 = "ice")or (q2 = "boiling" and q3 = "snow")or (q2 = "boiling" and q3 = "ice")or (q2 = "temperate" and q3 = "snow")or (q2 = "temperate" and q3 = "ice")):
+    #print(q2 + "   "+q3)
+    error = (q2 == "hot" or q2 == "boiling" or q2 == "warm" or q2 == "temperate")  and (q3 == "ice" or q3 == "snow")
+    while error:
         q1=Quality1[RandRange(0,len(Quality1)-1)]
         q2=Quality2[RandRange(0,len(Quality2)-1)]
         q3=Quality3[RandRange(0,len(Quality3)-1)]
+        error = ((q2 == "hot" or q2 == "boiling" or q2 == "warm" or q2 == "temperate" ) and (q3 == "ice" or q3 == "snow"))or(((q1 == "flat") and (q3 = "mountain"))
     return [q1,q2,q3]
 
 def DescribePlanet(qual = [], name = ""):
@@ -82,5 +85,3 @@ def DescribePlanet(qual = [], name = ""):
         n = name
     d = "The "+ q[2] +" planet, " + n + ", is " + q[1] + " and " + q[0]+ "."
     return d
-
-    

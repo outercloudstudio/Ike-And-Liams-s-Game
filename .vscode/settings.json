@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/isaac/opt/anaconda3/bin/python",
+    "python.pythonPath": "C:\\Users\\TSHan\\anaconda3\\envs\\Main\\python.exe",
     "git.ignoreLimitWarning": true,
     "python.testing.unittestArgs": [
         "-v",

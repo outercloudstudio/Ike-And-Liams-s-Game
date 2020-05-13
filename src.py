@@ -60,7 +60,14 @@ def GeneratePlanetQualities():
     Quality1 = ["rocky","hilly","flat","has plateus","has cliffs"]
     Quality2 =["hot", "temperate","cold","warm","freezing","boiling"]
     Quality3 = ["jungle","dessert","ocean","mountain","forest","snow","ice","paradise","volcano"]
-    return [Quality1[RandRange(0,len(Quality1)-1)],Quality2[RandRange(0,len(Quality2)-1)],Quality3[RandRange(0,len(Quality3)-1)]]
+    q1=Quality1[RandRange(0,len(Quality1)-1)]
+    q2=Quality2[RandRange(0,len(Quality2)-1)]
+    q3=Quality3[RandRange(0,len(Quality3)-1)]
+    while ((q1 = "rocky" and q3 = "mountain") or (q2 = "hot" and q3 = "snow")or (q2 = "hot" and q3 = "ice")or (q2 = "warm" and q3 = "snow")or (q2 = "warm" and q3 = "ice")or (q2 = "boiling" and q3 = "snow")or (q2 = "boiling" and q3 = "ice")or (q2 = "temperate" and q3 = "snow")or (q2 = "temperate" and q3 = "ice")):
+        q1=Quality1[RandRange(0,len(Quality1)-1)]
+        q2=Quality2[RandRange(0,len(Quality2)-1)]
+        q3=Quality3[RandRange(0,len(Quality3)-1)]
+    return [q1,q2,q3]
 
 def DescribePlanet(qual = [], name = ""):
     q = []
